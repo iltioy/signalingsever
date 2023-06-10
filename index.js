@@ -36,7 +36,6 @@ io.on("connection", (socket) => {
     });
 
     socket.on("answer_created", (data) => {
-        console.log(data);
         io.to(data.remoteId).emit("answer_send", {
             senderId: data.answeringId,
             answer: data.answer,
